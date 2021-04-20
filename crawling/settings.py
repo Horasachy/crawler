@@ -2,9 +2,11 @@ import os
 import sys
 
 import django
+import geckodriver_autoinstaller
 from shutil import which
 
 
+geckodriver_autoinstaller.install()
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "."))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'webapp.settings'
 
@@ -16,16 +18,15 @@ BOT_NAME = 'crawling'
 SPIDER_MODULES = ['crawling.spiders']
 NEWSPIDER_MODULE = 'crawling.spiders'
 
-
 SELENIUM_DRIVER_NAME = 'firefox'
 SELENIUM_DRIVER_EXECUTABLE_PATH = which('geckodriver')
-SELENIUM_DRIVER_ARGUMENTS = ['-headless']
+SELENIUM_DRIVER_ARGUMENTS = ['headless']
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'crawling (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -52,9 +53,9 @@ DOWNLOAD_DELAY = 3
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'crawling.middlewares.CrawlingSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+   'crawling.middlewares.CrawlingSpiderMiddleware': 543,
+}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
@@ -71,9 +72,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'crawling.pipelines.CrawlingPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'crawling.pipelines.CrawlingPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
