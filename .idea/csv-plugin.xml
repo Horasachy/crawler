@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CsvFileAttributes">
+    <option name="attributeMap">
+      <map>
+        <entry key="/Dockerfile">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc-crawler/buc_crawler/spiders/ymap.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc-crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T14-59-32.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc-crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T15-15-15.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc-crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T15-23-33.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc-crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T15-52-50.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc-crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T16-11-20.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc-crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T16-26-03.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc-crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T16-44-52.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc-crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T17-24-56.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc-crawler/s.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/buc_crawler/spiders/dgis.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/buc_crawler/spiders/ymap.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T15-52-50.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T20-25-58.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T20-39-18.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T20-40-08.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T20-46-01.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T20-57-21.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T21-11-07.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-08T21-23-02.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T11-04-09.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T11-14-55.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T11-15-21.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T11-16-53.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T11-32-13.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T11-32-53.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T11-50-26.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T13-17-38.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T13-18-08.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T13-23-34.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T13-26-55.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T13-40-07.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T13-41-41.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-09T14-37-11.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-10T09-34-48.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-10T09-35-29.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T08-52-58.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T10-12-29.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T14-57-48.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T16-00-15.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T16-02-58.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T16-05-02.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T16-06-13.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T16-15-04.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T17-18-19.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T17-27-11.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T17-39-50.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T17-45-48.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T17-50-08.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T18-02-44.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T18-24-55.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T18-38-06.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T18-49-28.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T19-09-37.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T19-29-15.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T20-49-31.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T21-12-43.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T21-24-50.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/buc_crawler/crawler-data/items/buc_crawler/ymap/2021-05-11T21-40-22.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/crawling/spiders/ymap.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/s.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/v.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="Docker:5ae986d9a23aae54ad19945b30f5d4858965fc7af0b060308847f0295ea5eb3a:/crawler/crawler-data/items/buc_crawler/ymap/2021-05-12T09-11-03.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
