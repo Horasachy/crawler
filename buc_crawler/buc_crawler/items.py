@@ -7,9 +7,9 @@ class CompanyItem(Item):
     name = Field()
     email = Field()
     site = Field()
-    social = Field()
     phones = Field()
     products = Field()
+    social = Field()
 
 class CityItem(Item):
     name = Field()
@@ -20,15 +20,3 @@ class RubricItem(Item):
     url = Field()
 
 
-class CompanyItem(Item):
-    city = Field()
-    rubric = Field()
-    sub_rubric = Field()
-    category = Field()
-    url = Field()
-    name = Field()
-    kind = Field()
-    tel = Field()
-    email = Field()
-    website = Field()
-    networks = Field()
