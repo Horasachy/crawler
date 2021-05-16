@@ -7,6 +7,11 @@ This project contains crawlers and collected datasets for D2B projects.
 docker login registry.gitlab.com
 docker run -p 5000:5000 -p 6800:6800 registry.gitlab.com/inside-solutions/buc-crawler
 ```
+or:
+```
+docker build -t crawler . 
+docker run -p 5000:5000 -p 6800:6800 crawler:latest 
+```
 
 ScrapydWeb Server
 http://localhost:5000
