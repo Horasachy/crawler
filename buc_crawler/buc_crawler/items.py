@@ -8,7 +8,6 @@ class CompanyItem(Item):
     email = Field()
     site = Field()
     phones = Field()
-    products = Field()
     social = Field()
 
 class CityItem(Item):

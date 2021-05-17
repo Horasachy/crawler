@@ -1,16 +1,24 @@
-from os import path
-from typing import List
 import time
+import logging
+from typing import List
+
+from selenium.webdriver.common.by import By
+
+from buc_crawler.xpaths import DGisMapPath
 from scrapy import Spider, Selector, Request
+from selenium.webdriver.firefox.webdriver import WebDriver
 from scrapy.loader import ItemLoader
 from scrapy_selenium import SeleniumRequest
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 from scrapy_splash import SplashRequest
-from urllib.parse import urljoin
 from buc_crawler.items import CompanyItem
-from buc_crawler.tools import is_not_firm
 from selenium.webdriver.support import expected_conditions as EC
+
+logger = logging.getLogger(__name__)
+
+xpath = DGisMapPath()
+
 
 class DGisSpider(Spider):
     name = '2gis'
@@ -18,9 +26,11 @@ class DGisSpider(Spider):
     allowed_domains = [
         '2gis.ru',
     ]
+
     start_url = [
         'https://2gis.ru',
     ]
+
     cities = [
         'Москва', 'Московская область', 'Белгородская область',
         'Брянская область', 'Владимирская область', 'Воронежская область',
@@ -33,17 +43,19 @@ class DGisSpider(Spider):
         'Металлопрокат', 'Строительная компания', 'Торгово-производственная компания',
         'Строительные материалы', 'Чёрный металлопрокат', 'Цветной металл'
     ]
-    links = []
     custom_settings = {
         'BOT_NAME': 'Thank you so much!',
         'ROBOTSTXT_OBEY': False,
         'URLLENGTH_LIMIT': 4166,
-        'CONCURRENT_REQUESTS': 16,
-        'DOWNLOAD_DELAY': 3,
+        'CONCURRENT_REQUESTS': 200,
+        'DOWNLOAD_DELAY': 0.50,
         'COOKIES_ENABLED': False,
         'DEFAULT_REQUEST_HEADERS': {
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Accept-Language': 'ru',
+        },
+        'SPIDER_MIDDLEWARES': {
+            'buc_crawler.middlewares.CrawlingSpiderMiddleware': 543,
         },
         'DOWNLOADER_MIDDLEWARES': {
             'buc_crawler.middlewares.CrawlingDownloaderMiddleware': 543,
@@ -54,91 +66,88 @@ class DGisSpider(Spider):
     }
 
     def start_requests(self):
-        for url in self.start_url:
+        for city in self.cities:
             yield SeleniumRequest(
-                url=url,
-                callback=self.parse_category_links,
-                cb_kwargs={'city': 'Москва'}
-            )
+                    url=self.start_url[0],
+                    callback=self.parse_category_links,
+                    cb_kwargs={'city': city},
+                    wait_time=10,
+                    wait_until=EC.presence_of_element_located((By.XPATH, xpath.search)),
+                    dont_filter=True
+                )
 
     def parse_category_links(self, response, **kwargs):
         driver: WebDriver = response.request.meta['driver']
-        try:
-            accept_cookie = driver.find_element_by_xpath('//div[@class="_trvdea"]//button[@class="_1wadwrc"]')
-            accept_cookie.click()
+        city: str = kwargs.get("city")
+        urls: List = []
+        accept_cookie(driver)
+        for category in self.category_list:
+            print("_______________")
+            print(len(urls))
+            search_field = driver.find_element_by_xpath(xpath.search)
             time.sleep(3)
-        except NoSuchElementException:
-            pass
-        search_field = driver.find_element_by_xpath('//input[contains(@class, "_xykhig")]')
-        search_field.send_keys(f'{kwargs.get("city")} {self.category_list[0]}')
-        time.sleep(3)
-        search_field.send_keys(Keys.ENTER)
-        time.sleep(3)
-        self.get_companies_links(driver)
-        time.sleep(3)
-        for link in self.links:
+            search_field.send_keys(f'{city} {category}')
+            time.sleep(3)
+            search_field.send_keys(Keys.ENTER)
+            time.sleep(3)
+            fill_and_prepare_urls_of_companies(driver, city, category, urls)
+            time.sleep(3)
+            search_clear(driver)
+
+        for url in urls:
             yield SplashRequest(
-                url=link,
+                url=url['href'],
                 callback=self.parse_company_detail_page,
-                cb_kwargs={'city':kwargs.get('city'), 'category':self.category_list[0], 'link':link}
+                cb_kwargs={'city': url['city'], 'category': url['category']}
             )
 
-
     def parse_company_detail_page(self, response, **kwargs):
-        link: str = kwargs.get('link')
-        loader = ItemLoader(item=CompanyItem(), response=response)
-        loader.add_xpath('name', '//span//span[@class="_oqoid"]/text()')
+        loader: ItemLoader = ItemLoader(item=CompanyItem(), response=response)
         loader.add_value('category', kwargs.get('category'))
         loader.add_value('city', kwargs.get('city'))
-        loader.add_xpath('site', '//div[@class="_49kxlr"]//a[contains(@class, "_pbcct4") and contains(@target, "_blank")]/text()')
-        loader.add_xpath('email', '//div[@class="_49kxlr"]//div//a[contains(@target,"_blank") and contains(@class, "_1nped2zk")]/text()')
-        loader.add_xpath('phones', '//div[@class="_b0ke8"]//a[@class="_1nped2zk"]/@href')
-        loader.add_xpath('social', '//div[@class="_oisoenu"]//a/@href')
-        yield SeleniumRequest(
-            url=link,
-            callback=self.parse_company_products,
-            cb_kwargs={'loader': loader}
-        )
-
-    def parse_company_products(self, response, **kwargs):
-        driver: WebDriver = response.request.meta['driver']
-        loader: ItemLoader = kwargs.get('loader')
-        try:
-            price = driver.find_element_by_xpath('//a[contains(@class, "_1nped2zk") and contains(text(), "Цены")]')
-        except NoSuchElementException:
-            price = None
-        if price:
-            price.click()
-            time.sleep(3)
-            i = 0
-            while (i < 25):
-                products = driver.find_elements_by_xpath('//div[@class="_8mqv20"]//div[1]') or driver.find_elements_by_xpath('//article[@class="_gc1bca"]//div[@class="_o2i0na"]')
-                if len(products) > 1:
-                    driver.execute_script("arguments[0].scrollIntoView();", products[-1])
-                time.sleep(1)
-                i += 1
-            for product in products:
-                loader.add_value('products', product.text)
-
+        loader.add_xpath('site', xpath.company_site)
+        loader.add_xpath('name', xpath.company_name)
+        loader.add_xpath('email', xpath.company_email)
+        loader.add_xpath('phones', xpath.company_phones)
+        loader.add_xpath('social', xpath.company_social)
         return loader.load_item()
 
-    def get_companies_links(self, driver):
-        while(True):
-            urls = driver.find_elements_by_xpath('//div[@class="_1h3cgic"]//a')
-            try:
-                next_page = driver.find_element_by_xpath('//div[@class="_n5hmn94"][2]/*[name()="svg"]')
-            except NoSuchElementException:
-                next_page = driver.find_element_by_xpath('//div[@class="_n5hmn94"]/*[name()="svg"]')
-            driver.execute_script("arguments[0].scrollIntoView();", urls[-1])
+
+def fill_and_prepare_urls_of_companies(driver: WebDriver, city: str, category: str, urls: List) -> None:
+    while True:
+        logger.info(f"City:{city} Category:{category}")
+        urls_xpath: List[Selector] = driver.find_elements_by_xpath(xpath.companies_urls)
+        try:
+            next_page: Selector = driver.find_element_by_xpath(xpath.next_page_one)
+        except NoSuchElementException:
+            next_page: Selector = driver.find_element_by_xpath(xpath.next_page_two)
+        driver.execute_script("arguments[0].scrollIntoView();", urls_xpath[-1])
+        time.sleep(1)
+        if len(urls_xpath) == 12:
+            for url in urls_xpath:
+                urls.append({'href': url.get_attribute("href"), 'city': city, 'category': category})
+            next_page.click()
             time.sleep(1)
-            if len(urls) == 12:
-                for url in urls:
-                    self.links.append(url.get_attribute("href"))
-                time.sleep(1)
-                next_page.click()
-                time.sleep(1)
-            else:
-                for url in urls:
-                    self.links.append(url.get_attribute("href"))
-                    time.sleep(1)
-                break
+        else:
+            for url in urls_xpath:
+                urls.append({'href': url.get_attribute("href"), 'city': city, 'category': category})
+            time.sleep(1)
+            break
+
+
+def accept_cookie(driver: WebDriver) -> None:
+    try:
+        accept_cookie: Selector = driver.find_element_by_xpath(xpath.accept_cookie)
+        accept_cookie.click()
+        time.sleep(3)
+    except NoSuchElementException:
+        pass
+
+
+def search_clear(driver: WebDriver) -> None:
+    try:
+        search_clear: Selector = driver.find_element_by_xpath(xpath.search_clear)
+        search_clear.click()
+        time.sleep(3)
+    except NoSuchElementException:
+        pass
