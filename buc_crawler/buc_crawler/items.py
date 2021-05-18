@@ -1,4 +1,4 @@
-from scrapy import Item,Field
+from scrapy import Item, Field
 
 
 class CompanyItem(Item):
@@ -9,13 +9,4 @@ class CompanyItem(Item):
     site = Field()
     phones = Field()
     social = Field()
-
-class CityItem(Item):
-    name = Field()
-
-
-class RubricItem(Item):
-    name = Field()
-    url = Field()
-
-
+    products = Field()

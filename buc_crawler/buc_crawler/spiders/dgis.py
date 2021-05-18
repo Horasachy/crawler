@@ -82,8 +82,6 @@ class DGisSpider(Spider):
         urls: List = []
         accept_cookie(driver)
         for category in self.category_list:
-            print("_______________")
-            print(len(urls))
             search_field = driver.find_element_by_xpath(xpath.search)
             time.sleep(3)
             search_field.send_keys(f'{city} {category}')
