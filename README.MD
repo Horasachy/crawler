@@ -29,11 +29,9 @@ Select on the left in the menu:
 Operations -> Deploy Project
 ```
 ```
-Click: Package & Deploy
-```
-```
-Select: spider
-```
-```
-Click: Check CMD & Run Spider
+1. Click Package & Deploy
+2. Select spider
+3. Click settings & arguments
+4. Clear additional and enter "-d cities=Москва,Уфа -d categories=Металлопрокат,Цветной металл" or copy all args from scrapyd_args.txt
+5. Click Check CMD & Run Spider
 ```
