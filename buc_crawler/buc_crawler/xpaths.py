@@ -16,12 +16,11 @@ class YandexMapPath(object):
 
 class DGisMapPath(object):
     def __init__(self):
-        self.search = '//input[contains(@class, "_xykhig")]'
+        self.search = '//input[contains(@type,"text") and contains(@placeholder,"Поиск в 2ГИС")]'
         self.search_clear = '//button[@class="_1mit2xq"]'
         self.companies_urls = '//div[@class="_1h3cgic"]//a'
         self.accept_cookie = '//div[@class="_trvdea"]//button[@class="_1wadwrc"]'
-        self.next_page_one = '//div[@class="_n5hmn94"][2]/*[name()="svg"]'
-        self.next_page_two = '//div[@class="_n5hmn94"]/*[name()="svg"]'
+        self.next_page = '//div[@class="_5i4ljs"]/div[@class="_n5hmn94"]'
 
         self.company_price = '//a[contains(@class, "_1nped2zk") and contains(text(), "Цены")]'
         self.company_name = '//span//span[@class="_oqoid"]/text()'
