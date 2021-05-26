@@ -19,8 +19,8 @@ SPIDER_MODULES = ['buc_crawler.spiders']
 NEWSPIDER_MODULE = 'buc_crawler.spiders'
 
 SELENIUM_DRIVER_NAME = 'firefox'
-SELENIUM_DRIVER_EXECUTABLE_PATH = which('/crawler/geckodriver')
-SELENIUM_DRIVER_ARGUMENTS = ['-headless']
+SELENIUM_DRIVER_EXECUTABLE_PATH = which('geckodriver')
+SELENIUM_DRIVER_ARGUMENTS = ['headless']
 
 SPLASH_URL = 'http://localhost:8050'
 
