@@ -4,7 +4,6 @@ This project contains crawlers and collected datasets for D2B projects.
 ## How to use this Docker image
 
 ```
-docker login registry.gitlab.com
 docker run -p 5000:5000 -p 6800:6800 registry.gitlab.com/inside-solutions/buc-crawler
 ```
 or:
